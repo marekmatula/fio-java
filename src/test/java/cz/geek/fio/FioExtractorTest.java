@@ -3,18 +3,15 @@ package cz.geek.fio;
 import org.joda.time.LocalDate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.AbstractClientHttpResponse;
-import org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.math.BigInteger;
 
 import static cz.geek.fio.FioExtractor.statementExtractor;
 import static cz.geek.fio.ResourceUtils.readFromResource;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
-import static org.testng.Assert.*;
 
 public class FioExtractorTest {
 
@@ -31,8 +28,8 @@ public class FioExtractorTest {
 
         assertThat(statement.getTransactions(), hasSize(2));
         final FioTransaction transaction = statement.getTransactions().iterator().next();
-        assertThat(transaction.getIdPohybu(), is("1147301403"));
-        assertThat(transaction.getDatum(), is(new LocalDate(2012, 6, 30)));
+        assertThat(transaction.getTransactionId(), is("1147301403"));
+        assertThat(transaction.getDate(), is(new LocalDate(2012, 6, 30)));
     }
 
     static class FakeClientHttpResponse extends AbstractClientHttpResponse {

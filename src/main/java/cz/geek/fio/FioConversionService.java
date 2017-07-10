@@ -83,33 +83,43 @@ class FioConversionService {
             for (Transaction transaction: source.getTransaction()) {
                 final FioTransaction target = new FioTransaction();
 
-                target.setIdPohybu(transaction.getColumn22().getValue());
-                target.setDatum(toLocalDate(transaction.getColumn0().getValue()));
-                target.setObjem(transaction.getColumn1().getValue());
-                target.setTyp(transaction.getColumn8().getValue());
-                target.setMena(transaction.getColumn14().getValue());
+                target.setTransactionId(transaction.getColumn22().getValue());
+                target.setDate(toLocalDate(transaction.getColumn0().getValue()));
+                target.setAmount(transaction.getColumn1().getValue());
+                target.setType(transaction.getColumn8().getValue());
+                target.setCurrency(transaction.getColumn14().getValue());
 
                 if (transaction.getColumn2() != null) {
-                    target.setProtiucet(transaction.getColumn2().getValue());
+                    target.setBankAccount(transaction.getColumn2().getValue());
                 }
                 if (transaction.getColumn3() != null) {
-                    target.setBankaKod(transaction.getColumn3().getValue());
+                    target.setBankCode(transaction.getColumn3().getValue());
                 }
                 if (transaction.getColumn7() != null) {
-                    target.setUzivatelskaIdentifikace(transaction.getColumn7().getValue());
+                    target.setUserId(transaction.getColumn7().getValue());
                 }
                 if (transaction.getColumn9() != null) {
-                    target.setProvedl(transaction.getColumn9().getValue());
+                    target.setOwner(transaction.getColumn9().getValue());
                 }
                 if (transaction.getColumn12() != null) {
-                    target.setBankaNazev(transaction.getColumn12().getValue());
+                    target.setBankName(transaction.getColumn12().getValue());
                 }
                 if (transaction.getColumn17() != null) {
-                    target.setIdPokynu(transaction.getColumn17().getValue());
+                    target.setReuqestId(transaction.getColumn17().getValue());
                 }
                 if (transaction.getColumn25() != null) {
-                    target.setKomentar(transaction.getColumn25().getValue());
+                    target.setComment(transaction.getColumn25().getValue());
                 }
+
+                if(transaction.getColumn4() != null)
+                    target.setConstantSymbol(transaction.getColumn4().getValue());
+
+                if(transaction.getColumn5() != null)
+                    target.setVariableSymbol(transaction.getColumn5().getValue());
+
+                if(transaction.getColumn6() != null)
+                    target.setSpecificSymbol(transaction.getColumn6().getValue());
+
                 transactions.add(target);
             }
             return transactions;

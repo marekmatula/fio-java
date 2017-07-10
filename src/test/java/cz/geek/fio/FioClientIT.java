@@ -74,7 +74,7 @@ public class FioClientIT {
                 .withContentType("text/xml")
                 .withStatus(200);
 
-        fio.getStatement(new LocalDate(2016, 1, 1), new LocalDate(2016, 1, 2));
+        FioAccountStatement fioAS = fio.getStatement(new LocalDate(2016, 1, 1), new LocalDate(2016, 1, 2));
     }
 
     @Test
