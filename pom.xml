@@ -4,7 +4,7 @@
 
     <groupId>cz.hrubysoftware</groupId>
     <artifactId>fio-java</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.4</version>
     <name>${project.artifactId}</name>
     <description>Fio Bank Java Client</description>
 
@@ -28,6 +28,12 @@
     <developers>
         <developer>
             <name>Martin Caslavsky</name>
+        </developer>
+        <developer>
+            <name>Novotass</name>
+        </developer>
+        <developer>
+            <name>Lukas Hruby</name>
         </developer>
     </developers>
 
@@ -149,7 +155,7 @@
                             <goal>analyze-only</goal>
                         </goals>
                         <configuration>
-                            <failOnWarning>true</failOnWarning>
+                            <failOnWarning>false</failOnWarning>
                             <ignoreNonCompile>true</ignoreNonCompile>
                             <ignoredUnusedDeclaredDependencies>
                                 <ignoredUsedUndeclaredDependency>org.apache.httpcomponents:httpcore</ignoredUsedUndeclaredDependency>
