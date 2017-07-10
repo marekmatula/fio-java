@@ -1,5 +1,7 @@
 package cz.geek.fio;
 
+import cz.geek.fio.model.AccountStatement;
+import cz.geek.fio.model.Info;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.MatcherAssert.*;

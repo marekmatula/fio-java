@@ -1,5 +1,6 @@
 package cz.geek.fio;
 
+import cz.geek.fio.model.AccountStatement;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.client.ResponseExtractor;
