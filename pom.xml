@@ -4,7 +4,7 @@
 
     <groupId>cz.hrubysoftware</groupId>
     <artifactId>fio-java</artifactId>
-    <version>0.1.4</version>
+    <version>0.2.0</version>
     <name>${project.artifactId}</name>
     <description>Fio Bank Java Client</description>
 
@@ -35,10 +35,13 @@
         <developer>
             <name>Lukas Hruby</name>
         </developer>
+        <developer>
+            <name>Jiri Kapoun</name>
+        </developer>
     </developers>
 
     <properties>
-        <targetJdk>1.7</targetJdk>
+        <targetJdk>1.8</targetJdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <httpclient.version>4.3.3</httpclient.version>
@@ -175,6 +178,14 @@
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -226,11 +237,6 @@
                     <artifactId>spring-context</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.7</version>
         </dependency>
 
         <dependency>
