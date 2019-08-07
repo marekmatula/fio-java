@@ -4,7 +4,7 @@
 
     <groupId>cz.hrubysoftware</groupId>
     <artifactId>fio-java</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
     <description>Fio Bank Java Client</description>
 
